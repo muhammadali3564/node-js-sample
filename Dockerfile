@@ -1,13 +1,13 @@
-FROM node:4.0.0-alpine
+FROM node:20-alpine
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package*.json ./
 
-RUN npm install --production
+RUN npm ci --only=production
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
