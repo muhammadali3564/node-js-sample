@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package.json ./
 
@@ -8,6 +8,6 @@ RUN npm install --omit=dev
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["node", "index.js"]
